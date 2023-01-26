@@ -1,0 +1,19 @@
+terraform workspace:- It is used to maintain the multiple stats of your infrastructure from single codebase.
+
+
+> create folder ENV with dev.tfvars or prod.tfvars (just change the cluster name or port or number of instances) in the terraform project.
+> values in the .tfvars will be in definition syntax. key = "val"
+> terraform workspace list //list all the envoriments
+> terraform workspace new dev //create new dev workspace envoriment.
+> terraform workspace select default //switch to default/prod workspace and run the following command.
+> terraform apply --auto-approve //apply default/production infra code
+> terraform workspace select dev //switch to dev workspace and run the following command.
+> terraform apply --auto-approve --var-file="env/dev.tfvars" //deploy dev infra code
+
+
+DESTROY:-
+---------
+> terraform workspace select dev // switch to dev workspace and run destroy command
+> terraform workspace select default // switch to default workspace and run destroy command
+
+> terraform workspace delete dev //delete dev workspace
